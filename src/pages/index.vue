@@ -7,7 +7,7 @@
     <header>
         <div class="wrapper">
             <h1 class="text-2xl">
-                Page d'accueil
+                Accueil portfolio
             </h1>
         </div>
     </header>
