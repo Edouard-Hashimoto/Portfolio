@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router';
+import LoginOut from './components/LoginOut.vue';
+import { RouterLink, RouterView } from 'vue-router'
+
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-      <h1 class="text-2xl bg-slate-400">Template </h1>
+      <h1 class="text-2xl bg-slate-400">Template Principal (Menu/Footer/...)</h1>
+      <LoginOut />
       <nav>
         <ul>
           <RouterLink to="/">Accueil</RouterLink>
