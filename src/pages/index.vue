@@ -6,7 +6,7 @@
 <template>
     <header>
         <div class="wrapper">
-            <h1 class="text-2xl">
+            <h1 class="text-lg">
                 Accueil portfolio
             </h1>
         </div>

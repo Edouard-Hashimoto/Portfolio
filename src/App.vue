@@ -7,12 +7,13 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
     <div class="wrapper">
-      <h1 class="text-2xl bg-slate-400">Template Principal (Menu/Footer/...)</h1>
+      <h1 class=" bg-slate-400">Template Principal (Menu/Footer/...)</h1>
       <LoginOut />
       <nav>
         <ul>
           <RouterLink to="/">Accueil</RouterLink>
           <RouterLink to="/projet">Projet</RouterLink>
+          <RouterLink to="/guide-de-style">Guide de style</RouterLink>
         </ul>
       </nav>
     </div>
