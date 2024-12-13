@@ -1,119 +1,111 @@
-<!-- eslint-disable vue/multi-word-component-names -->
-<script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
-
-// Logique du carrousel
-const currentIndex = ref(0);
-const slides = ref([
-  { image: "public/iPhone_Mockup_2.webp" },
-  { image: "public/mockup 1.webp"},
-  { image: "public/Free_Key_Chain_Mockup_1 1.webp"},
-]);
-
-let interval: ReturnType<typeof setInterval>;
-
-const nextSlide = () => {
-  currentIndex.value = (currentIndex.value + 1) % slides.value.length;
-};
-
-onMounted(() => {
-  interval = setInterval(nextSlide, 3000);
-});
-
-onUnmounted(() => {
-  clearInterval(interval);
-});
-</script>
-
 <template>
-  <div class="bg-white flex h-screen flex-col items-center justify-center transition-div">
-    <h1
-      class="animate-light-effect font-Text-principale text-xl md:text-xl lg:text-2xl text-zinc-900"
-      style="margin-bottom: -10px"
-    >
-      Edouard Hashimoto
-    </h1>
-    <h1
-      class="animate-light-effect font-Text-principale text-xl md:text-xl lg:text-2xl text-zinc-900"
-      style="margin-top: -10px"
-    >
-      DEVELOPPEUR WEB
-    </h1>
-  </div>
-
-  <div class="bg-white w-full">
-    <p class="lg:w-1/2 font-paragraph text-sm md:text-base lg:text-lg text-black pt-20 lg:pt-60 pb-20 lg:pb-60 ml-20">
-      Edouard Hashimoto, étudiant en deuxième année de MMi (Métiers du Multimédia et de l'Internet),
-      avec une spécialisation en développement web. Passionné par la création et l'optimisation de
-      sites et d'applications web, j'explore constamment les nouvelles technologies du web.
-    </p>
-  </div>
-
-  <!-- Section avec le carrousel -->
-  <div class="bg-white relative p-20">
-    <div class="absolute inset-0 grid-background"></div>
-    <p class="font-Text-principale text-2xl text-black relative ml-20">Mes projets</p>
-    <div class="carousel-container relative overflow-hidden w-[600px] h-[800px]">
-      <div
-        class="carousel-wrapper flex transition-transform duration-500"
-        :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
+  <div class="bg-[#e0d1df]">
+    <!-- Section d'introduction -->
+    <div class="transition-div flex min-h-screen flex-col items-start justify-center px-5 md:px-10">
+      <h1
+        class="animate-light-effect font-Text-principale text-lg text-zinc-900 sm:text-xl lg:text-2xl mb-5"
       >
+        Edouard Hashimoto
+      </h1>
+      <h1
+        class="animate-light-effect font-Text-principale text-lg text-zinc-900 sm:text-xl lg:text-2xl"
+      >
+        DEVELOPPEUR WEB
+      </h1>
+    </div>
+    <!-- Section à propos -->
+    <div class="w-full px-5 md:px-10">
+      <p
+        class="font-paragraph text-sm text-black sm:text-base md:text-lg lg:w-3/4 lg:pb-20 lg:pt-20 lg:text-lg"
+      >
+        Edouard Hashimoto, étudiant en deuxième année de MMi (Métiers du Multimédia et de
+        l'Internet), avec une spécialisation en développement web. Passionné par la création et
+        l'optimisation de sites et d'applications web, j'explore constamment les nouvelles
+        technologies du web.
+      </p>
+    </div>
+    <!-- Section carousel -->
+    <div class="w-full px-5 text-center md:px-10">
+      <h2 class="mb-5 font-Text-principale text-2xl text-zinc-800 sm:text-3xl lg:text-4xl">
+        Mes Projets
+      </h2>
+      <div class="carousel">
         <div
-          v-for="(slide, index) in slides"
-          :key="index"
-          class="carousel-slide flex-shrink-0 w-full h-full"
+          class="carousel-track"
+          :style="{
+            transform: `translateX(-${scrollOffset}px)`,
+            transition: 'transform 0.05s linear'
+          }"
         >
-          <img :src="slide.image" :alt="slide.title" class="w-full h-full object-cover mt-[-100px]" />
-          <p class="absolute bottom-5 left-5 bg-black bg-opacity-50 text-white p-2 rounded">
-            {{ slide.title }}
-          </p>
+          <div
+            class="carousel-item w-[100px] h-[300px] lg:w-[500px] lg:h-[700px] p-0 md:p-10"
+            v-for="(image, index) in infiniteImages"
+            :key="index"
+          >
+            <img :src="image" :alt="`Image ${index + 1}`" class="carousel-image" />
+          </div>
         </div>
       </div>
-
-      <!-- Indicateurs -->
-      <div class="indicators absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-2">
-        <span
-          v-for="(slide, index) in slides"
-          :key="index"
-          class="w-3 h-3 bg-gray-500 rounded-full cursor-pointer"
-          :class="{ 'bg-black': index === currentIndex }"
-          @click="currentIndex = index"
-        ></span>
-      </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="relative flex flex-wrap justify-center bg-gray-100 p-5 pb-20">
+      <div class="flex w-full max-w-6xl flex-wrap items-center justify-around gap-5">
+        <div class="text-center">
+          <h3 class="font-league-gothic mb-3 text-lg font-bold text-gray-900">PROJETS</h3>
+          <ul class="font-mulish list-none space-y-2 text-gray-800">
+            <li>Lazydocs</li>
+            <li>Expo Toyo Ito</li>
+            <li>Logo Judo</li>
+            <li>Affiche Ville</li>
+          </ul>
+        </div>
+        <div class="text-center">
+          <h3 class="font-league-gothic mb-3 text-lg font-bold text-gray-900">CONTACT</h3>
+          <p class="font-mulish text-gray-800">edouard.hashimoto@edu.univ-fcomte.fr</p>
+          <p class="font-mulish text-gray-800">06 42 55 96 67</p>
+        </div>
+        <div class="text-center">
+          <h3 class="font-league-gothic mb-3 text-lg font-bold text-gray-900">SOCIAL</h3>
+          <ul class="font-mulish list-none space-y-2 text-gray-800">
+            <li><a href="#" class="hover:underline">LinkedIn</a></li>
+            <li><a href="#" class="hover:underline">Behance</a></li>
+            <li><a href="#" class="hover:underline">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </div>
-
-  <!-- Footer -->
-  <footer class="relative flex justify-center bg-gray-100 p-5">
-    <div class="absolute left-0 top-0 h-full flex items-center pl-5">
-      <img src="/public/IMG/logoHBlanc.webp" alt="Logo" class="max-w-sm h-auto opacity-20" />
-    </div>
-    <div class="flex justify-around w-full max-w-6xl items-center">
-      <div class="text-center">
-        <h3 class="font-league-gothic font-bold mb-3 text-lg text-gray-900">PROJETS</h3>
-        <ul class="list-none text-gray-800 font-mulish space-y-2">
-          <li>Lazydocs</li>
-          <li>Expo Toyo Ito</li>
-          <li>Logo Judo</li>
-          <li>Affiche Ville</li>
-        </ul>
-      </div>
-      <div class="text-center">
-        <h3 class="font-league-gothic font-bold mb-3 text-lg text-gray-900">CONTACT</h3>
-        <p class="text-gray-800 font-mulish">edouard.hashimoto@edu.univ-fcomte.fr</p>
-        <p class="text-gray-800 font-mulish">06 42 55 96 67</p>
-      </div>
-      <div class="text-center">
-        <h3 class="font-league-gothic font-bold mb-3 text-lg text-gray-900">SOCIAL</h3>
-        <ul class="list-none text-gray-800 font-mulish space-y-2">
-          <li><a href="#" class="hover:underline">LinkedIn</a></li>
-          <li><a href="#" class="hover:underline">Behance</a></li>
-          <li><a href="#" class="hover:underline">Instagram</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
 </template>
+
+<script setup lang="ts">
+import { ref, onMounted, computed } from 'vue'
+
+const images = [
+  'public/Citylight_Mockup_3.webp',
+  'public/Free_Key_Chain_Mockup_1 1.webp',
+  'public/iPhone_Mockup_2.webp',
+  'public/mockup 1.webp',
+  'public/iPhone_Mockup_2.webp'
+]
+
+const infiniteImages = computed(() => [...images, ...images, ...images])
+const scrollOffset = ref(0)
+const slideWidth = 520
+
+const startInfiniteScroll = () => {
+  setInterval(() => {
+    scrollOffset.value += 1
+    if (scrollOffset.value >= images.length * slideWidth) {
+      scrollOffset.value = 0
+    }
+  }, 40) // Approx. 60 frames per second
+}
+
+onMounted(() => {
+  startInfiniteScroll()
+})
+</script>
 
 <style scoped>
 /* Styles d'animation */
@@ -139,7 +131,7 @@ onUnmounted(() => {
 }
 
 .animate-light-effect {
-  background: linear-gradient(to right, #000, #fff, #000);
+  background: linear-gradient(to right, #000, #9e0505, #000);
   background-size: 200% auto;
   -webkit-background-clip: text;
   color: transparent;
@@ -148,7 +140,7 @@ onUnmounted(() => {
 
 .grid-background::before,
 .grid-background::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -159,17 +151,72 @@ onUnmounted(() => {
   background-size: 80px 80px;
 }
 
-.carousel-container {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
+/* Style général déjà présent */
+.carousel {
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #503247, #caaec8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin-bottom: 40px;
 }
 
-.indicators span {
-  transition: background-color 0.3s ease;
+.carousel-track {
+  display: flex;
+  white-space: nowrap;
 }
 
-.indicators span.bg-black {
-  background-color: black;
+.carousel-item {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.carousel-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Media queries pour les écrans plus petits */
+@media (max-width: 768px) {
+  .carousel {
+    height: 600px;
+  }
+
+  .carousel-item {
+    width: 300px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 400px;
+  }
+
+  .carousel-item {
+    width: 200px;
+    height: 350px;
+    padding: 0 5px;
+  }
+
+  .carousel-item img {
+    border-radius: 6px;
+  }
 }
 </style>
