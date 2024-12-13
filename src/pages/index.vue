@@ -82,11 +82,11 @@
 import { ref, onMounted, computed } from 'vue'
 
 const images = [
-  'public/Citylight_Mockup_3.webp',
-  'public/Free_Key_Chain_Mockup_1 1.webp',
-  'public/iPhone_Mockup_2.webp',
-  'public/mockup 1.webp',
-  'public/iPhone_Mockup_2.webp'
+  'public/IMG/Citylight_Mockup_3.webp',
+  'public/IMG/Free_Key_Chain_Mockup_1 1.webp',
+  'public/IMG/iPhone_Mockup_2.webp',
+  'public/IMG/mockup 1.webp',
+  'public/IMG/iPhone_Mockup_2.webp'
 ]
 
 const infiniteImages = computed(() => [...images, ...images, ...images])
