@@ -6,18 +6,35 @@ const listProjet = await pb.collection('Projets').getFullList()
 </script>
 
 <template>
-  <div class="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg">
-    <h2 class="text-2xl font-semibold mb-4">Liste :</h2>
-    <ul class="space-y-2">
-      <li v-for="unProjet in listProjet" :key="unProjet.id" class="p-4 bg-gray-100 rounded-lg hover:bg-gray-200">
-          {{ unProjet.nom_projet }}
-                    <ImgPb
-      v-if="unProjet.nom_projet"
-      :filename="unProjet?.Image1"
-      :record="unProjet"
-      class="rounded-lg mb-4"
-    />
-      </li>
-    </ul>
+  <div class="w-full bg-[#e0d1df] px-5 pt-44 pb-20">
+    <h2 class="mb-10 text-center font-Text-principale sm:text-2xl text-zinc-900 text-base">
+      Mes Projets
+    </h2>
+    <div
+      class="flex flex-wrap justify-center gap-8"
+    >
+      <div
+        v-for="unProjet in listProjet"
+        :key="unProjet.id"
+        class="lg:w-[640px] lg:h-[360px] w-72 h-52 relative overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-105 hover:shadow-xl"
+      >
+        <!-- Conteneur de l'image -->
+        <div class="absolute inset-0">
+          <ImgPb
+            v-if="unProjet.Image1"
+            :filename="unProjet?.Image1"
+            :record="unProjet"
+            class="h-full w-full object-cover"
+          />
+        </div>
+        <!-- Conteneur du texte -->
+        <div
+          class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4"
+        >
+          <h3 class="font-Text-principale text-lg text-white">{{ unProjet.nom_projet }}</h3>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
+
