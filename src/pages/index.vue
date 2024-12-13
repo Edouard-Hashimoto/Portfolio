@@ -3,7 +3,7 @@
     <!-- Section d'introduction -->
     <div class="transition-div flex min-h-screen flex-col items-start justify-center px-5 md:px-10">
       <h1
-        class="animate-light-effect font-Text-principale text-lg text-zinc-900 sm:text-xl lg:text-2xl mb-5"
+        class="animate-light-effect mb-5 font-Text-principale text-lg text-zinc-900 sm:text-xl lg:text-2xl"
       >
         Edouard Hashimoto
       </h1>
@@ -38,7 +38,7 @@
           }"
         >
           <div
-            class="carousel-item w-[100px] h-[300px] lg:w-[500px] lg:h-[700px] p-0 md:p-10"
+            class="carousel-item h-[300px] w-[100px] p-0 md:p-10 lg:h-[700px] lg:w-[500px]"
             v-for="(image, index) in infiniteImages"
             :key="index"
           >
@@ -82,11 +82,11 @@
 import { ref, onMounted, computed } from 'vue'
 
 const images = [
-  'public/IMG/Citylight_Mockup_3.webp',
-  'public/IMG/Free_Key_Chain_Mockup_1 1.webp',
-  'public/IMG/iPhone_Mockup_2.webp',
-  'public/IMG/mockup 1.webp',
-  'public/IMG/iPhone_Mockup_2.webp'
+  '/IMG/Citylight_Mockup_3.webp',
+  '/IMG/Free_Key_Chain_Mockup_1 1.webp',
+  '/IMG/iPhone_Mockup_2.webp',
+  '/IMG/mockup 1.webp',
+  '/IMG/iPhone_Mockup_2.webp'
 ]
 
 const infiniteImages = computed(() => [...images, ...images, ...images])

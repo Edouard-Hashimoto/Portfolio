@@ -23,35 +23,35 @@ export default {
   data() {
     return {
       IMG: [
-        { src: "Citylight_Mockup_3.webp", alt: "Slide 1" },
-        { src: "Free_Key_Chain_Mockup_1 1.webp", alt: "Slide 2" },
-        { image: "public/iPhone_Mockup_2.webp", alt: "Slide 3" },
+        { src: 'Citylight_Mockup_3.webp', alt: 'Slide 1' },
+        { src: 'Free_Key_Chain_Mockup_1 1.webp', alt: 'Slide 2' },
+        { image: '/iPhone_Mockup_2.webp', alt: 'Slide 3' }
       ],
       currentIndex: 0,
-      interval: null,
-    };
+      interval: null
+    }
   },
   methods: {
     nextSlide() {
-      this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+      this.currentIndex = (this.currentIndex + 1) % this.slides.length
     },
     goToSlide(index) {
-      this.currentIndex = index;
+      this.currentIndex = index
     },
     startAutoSlide() {
-      this.interval = setInterval(this.nextSlide, 3000); // Change slide every 3 seconds
+      this.interval = setInterval(this.nextSlide, 3000) // Change slide every 3 seconds
     },
     stopAutoSlide() {
-      clearInterval(this.interval);
-    },
+      clearInterval(this.interval)
+    }
   },
   mounted() {
-    this.startAutoSlide();
+    this.startAutoSlide()
   },
   beforeUnmount() {
-    this.stopAutoSlide();
-  },
-};
+    this.stopAutoSlide()
+  }
+}
 </script>
 
 <style scoped>
