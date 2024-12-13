@@ -18,6 +18,7 @@ const listProjet = await pb.collection('Projets').getFullList()
         :key="unProjet.id"
         class="lg:w-[640px] lg:h-[360px] w-72 h-52 relative overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-105 hover:shadow-xl"
       >
+      <RouterLink :to="{ name: '/projet/[id]', params: { id: unProjet.id } }">
         <!-- Conteneur de l'image -->
         <div class="absolute inset-0">
           <ImgPb
@@ -33,6 +34,7 @@ const listProjet = await pb.collection('Projets').getFullList()
         >
           <h3 class="font-Text-principale text-lg text-white">{{ unProjet.nom_projet }}</h3>
         </div>
+        </RouterLink>
       </div>
     </div>
   </div>
