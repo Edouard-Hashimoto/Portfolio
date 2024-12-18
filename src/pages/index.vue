@@ -21,11 +21,6 @@
     </div>
     <!-- Section à propos -->
     <div class="flex w-full flex-col items-center px-5 pt-52 md:px-10 lg:flex-row lg:items-start">
-      <img
-        src="../../IMG/pprofil.JPG"
-        class="mb-5 w-1/2 rounded-full md:w-1/3 lg:mb-0 lg:mr-10 lg:w-1/4"
-        alt="Photo de profil"
-      />
       <p
         class="lg:pb-30 font-paragraph text-sm text-black sm:text-base md:text-lg lg:w-1/2 lg:pt-36 lg:text-left"
       >
