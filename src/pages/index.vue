@@ -23,7 +23,7 @@
     <div class="flex w-full flex-col items-center px-5 pt-52 md:px-10 lg:flex-row lg:items-start">
       <img
         src="../../IMG/pprofil.JPG"
-        class="mb-5 w-1/4 rounded-full md:w-1/3 lg:mb-0 lg:mr-10 lg:w-1/4"
+        class="mb-5 w-1/2 rounded-full md:w-1/3 lg:mb-0 lg:mr-10 lg:w-1/4"
         alt="Photo de profil"
       />
       <p

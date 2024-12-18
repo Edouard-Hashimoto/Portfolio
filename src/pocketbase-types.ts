@@ -36,8 +36,17 @@ export type AuthSystemFields<T = never> = {
 // Record types for each collection
 
 export type ProjetsRecord = {
+	IMGfond?: string
 	Image1?: string
+	Image2?: string
+	Image3?: string
+	Para2?: string
+	Para3?: string
+	Titre1?: string
+	Titre3?: string
+	Titre4?: string
 	nom_projet?: string
+	para1?: string
 }
 
 export type TravailRecord = {
