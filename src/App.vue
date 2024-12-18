@@ -23,13 +23,13 @@ watch(isMenuOpen, (newValue) => {
     <nav class="flex items-center justify-between">
       <!-- Logo -->
       <RouterLink to="/" class="mr-auto">
-        <img src="/IMG/logoH.png" class="lg:h-40 h-20" alt="Logo" />
+        <img src="/Logo-noir.webp" class="h-14 lg:h-24" alt="Logo" />
       </RouterLink>
 
       <!-- Bouton menu pour petits écrans -->
       <button @click="toggleMenu" class="md:hidden">
         <svg
-          class="w-8 h-8"
+          class="h-8 w-8"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -45,21 +45,25 @@ watch(isMenuOpen, (newValue) => {
       </button>
 
       <!-- Menu principal pour écrans larges -->
-      <div class="hidden md:flex space-x-12">
+      <div class="hidden space-x-12 md:flex">
         <RouterLink to="/" class="font-Text-principale text-xl text-black">Accueil</RouterLink>
-        <RouterLink to="/projet" class="font-Text-principale text-xl text-black">Projets</RouterLink>
-        <RouterLink to="/contact" class="font-Text-principale text-xl text-black">Contact</RouterLink>
+        <RouterLink to="/projet" class="font-Text-principale text-xl text-black"
+          >Projets</RouterLink
+        >
+        <RouterLink to="/contact" class="font-Text-principale text-xl text-black"
+          >Contact</RouterLink
+        >
       </div>
     </nav>
 
     <!-- Menu déroulant pour petits écrans -->
     <div
       v-if="isMenuOpen"
-      class="fixed inset-0 bg-black text-white flex flex-col items-center justify-center md:hidden z-50"
+      class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white md:hidden"
     >
-      <button @click="toggleMenu" class="absolute top-4 right-4">
+      <button @click="toggleMenu" class="absolute right-4 top-4">
         <svg
-          class="w-8 h-8"
+          class="h-8 w-8"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -73,16 +77,21 @@ watch(isMenuOpen, (newValue) => {
           ></path>
         </svg>
       </button>
-      <RouterLink to="/" class="block p-4 text-xl router-link" @click="toggleMenu">Accueil</RouterLink>
+      <RouterLink to="/" class="router-link block p-4 text-xl" @click="toggleMenu"
+        >Accueil</RouterLink
+      >
       <hr class="w-3/4 border-t-2 border-purple-300" />
-      <RouterLink to="/projet" class="block p-4 text-xl router-link" @click="toggleMenu">Projets</RouterLink>
+      <RouterLink to="/projet" class="router-link block p-4 text-xl" @click="toggleMenu"
+        >Projets</RouterLink
+      >
       <hr class="w-3/4 border-t-2 border-purple-300" />
-      <RouterLink to="/contact" class="block p-4 text-xl router-link" @click="toggleMenu">Contact</RouterLink>
+      <RouterLink to="/contact" class="router-link block p-4 text-xl" @click="toggleMenu"
+        >Contact</RouterLink
+      >
     </div>
   </header>
-  
 
-  <main :class="{ 'blurred': isMenuOpen }">
+  <main :class="{ blurred: isMenuOpen }">
     <RouterView v-slot="{ Component }">
       <Suspense>
         <component :is="Component" :key="$route.path" />
@@ -90,16 +99,36 @@ watch(isMenuOpen, (newValue) => {
     </RouterView>
   </main>
   <footer
-      class="relative flex flex-wrap justify-center bg-gradient-to-r from-[#503247] to-[#caaec8] p-10"
-    >
-      <div class="flex w-full max-w-6xl flex-wrap items-start justify-between gap-5">
-        <div class="text-center text-white">
-          <h3 class="font-league-gothic mb-3 text-lg font-bold">CONTACT</h3>
-          <p class="font-mulish">edouard.hashimoto@edu.univ-fcomte.fr</p>
-          <p class="font-mulish">06 42 55 96 67</p>
+    class="relative flex flex-wrap justify-center bg-gradient-to-r from-[#503247] to-[#caaec8] p-10"
+  >
+    <div class="flex w-full max-w-6xl flex-wrap items-center justify-between gap-5">
+      <!-- Contact Section -->
+      <div class="w-full text-center text-white md:w-auto">
+        <h3 class="font-league-gothic mb-3 text-lg font-bold">CONTACT</h3>
+        <p class="font-mulish">edouard.hashimoto@edu.univ-fcomte.fr</p>
+        <p class="font-mulish">06 42 55 96 67</p>
+      </div>
+
+      <!-- Social Section -->
+      <div class="w-full text-center text-white md:w-auto">
+        <h3 class="font-league-gothic mb-3 text-lg font-bold">SOCIAL</h3>
+        <div class="flex justify-center gap-5">
+          <a href="https://github.com/" target="_blank" aria-label="GitHub">
+            <img src="/logo/github.png" alt="GitHub" class="h-8 w-8 hover:opacity-75" />
+          </a>
+          <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">
+            <img src="/logo/linkedin.png" alt="LinkedIn" class="h-8 w-8 hover:opacity-75" />
+          </a>
+          <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+            <img src="/logo/insta.svg" alt="Instagram" class="h-8 w-8 hover:opacity-75" />
+          </a>
+          <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+            <img src="/logo/x.png" alt="Twitter" class="h-8 w-8 hover:opacity-75" />
+          </a>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 </template>
 
 <style>

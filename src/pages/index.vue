@@ -1,22 +1,33 @@
 <template>
   <div class="bg-[#e0d1df]">
     <!-- Section d'introduction -->
-    <div class="transition-div mb-36 flex flex-col items-start justify-center px-5 pt-56 md:px-10">
-      <h1
-        class="animate-light-effect lg:mb-[-50px] font-Text-principale text-xl text-zinc-900 sm:text-xl lg:text-2xl"
-      >
-        Edouard Hashimoto
-      </h1>
-      <h1
-        class="animate-light-effect font-Text-principale text-xl text-zinc-900 sm:text-xl lg:text-2xl"
-      >
-        DEVELOPPEUR WEB
-      </h1>
+    <div
+      class="transition-div mb-36 flex flex-col-reverse items-center justify-center gap-5 px-5 pt-56 md:flex-row md:items-start md:px-10"
+    >
+      <!-- Texte -->
+      <div class="flex flex-col items-start md:items-start">
+        <h1
+          class="animate-light-effect font-Text-principale text-xl text-zinc-900 sm:text-xl lg:mb-[-50px] lg:text-2xl"
+        >
+          Edouard Hashimoto
+        </h1>
+        <h1
+          class="animate-light-effect font-Text-principale text-xl text-zinc-900 sm:text-xl lg:text-2xl"
+        >
+          DEVELOPPEUR WEB
+        </h1>
+      </div>
+      <!-- Image -->
     </div>
     <!-- Section à propos -->
-    <div class="w-full px-5 md:px-10">
+    <div class="flex w-full flex-col items-center px-5 pt-52 md:px-10 lg:flex-row lg:items-start">
+      <img
+        src="../../IMG/pprofil.JPG"
+        class="mb-5 w-1/4 rounded-full md:w-1/3 lg:mb-0 lg:mr-10 lg:w-1/4"
+        alt="Photo de profil"
+      />
       <p
-        class="font-paragraph text-sm text-black sm:text-base md:text-lg lg:w-1/2 lg:pb-20 lg:pt-20 lg:text-base"
+        class="lg:pb-30 font-paragraph text-sm text-black sm:text-base md:text-lg lg:w-1/2 lg:pt-36 lg:text-left"
       >
         Edouard Hashimoto, étudiant en deuxième année de MMi (Métiers du Multimédia et de
         l'Internet), avec une spécialisation en développement web. Passionné par la création et
@@ -24,9 +35,12 @@
         technologies du web.
       </p>
     </div>
+    <div class="absolute my-14 left-1/2 w-1/2 h-2 bg-black transform -translate-x-1/2"></div>
+    
     <!-- Section carousel -->
     <div class="w-full px-5 md:px-10">
-      <p class="left-0 mb-5 mt-10 font-Text-principale text-lg lg:text-2xl">Mes Projets</p>
+      
+      <p class="left-0mb-5 mt-52 font-Text-principale text-lg lg:text-2xl">Mes Projets</p>
       <div class="carousel">
         <div
           class="carousel-track"
@@ -47,17 +61,15 @@
       <div class="mt-5 pb-8 text-center">
         <RouterLink to="/projet">
           <button
-            class="transform rounded bg-gradient-to-r from-[#503247] to-[#caaec8] px-8 py-4 font-Text-principale text-xl text-white shadow-lg transition-transform hover:scale-105 hover:shadow-xl animate-light-effect"
+            class="animate-light-effect transform rounded bg-gradient-to-r from-[#503247] to-[#caaec8] px-8 py-4 font-Text-principale text-base text-white shadow-lg transition-transform hover:scale-105 hover:shadow-xl lg:text-xl"
           >
             Voir les projets
           </button>
         </RouterLink>
-
       </div>
     </div>
 
     <!-- Footer -->
-    
   </div>
 </template>
 
@@ -69,7 +81,6 @@ const images = [
   '/IMG/Free_Key_Chain_Mockup_1 1.webp',
   '/IMG/iPhone_Mockup_2.webp',
   '/IMG/mockup 1.webp',
-  '/IMG/iPhone_Mockup_2.webp'
 ]
 
 const infiniteImages = computed(() => [...images, ...images, ...images])

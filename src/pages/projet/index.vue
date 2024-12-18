@@ -7,7 +7,7 @@ const listProjet = await pb.collection('Projets').getFullList()
 
 <template>
   <div class="w-full bg-[#e0d1df] px-5 pt-44 pb-20">
-    <h2 class="mb-10 text-center font-Text-principale sm:text-2xl text-zinc-900 text-base">
+    <h2 class="mb-10 text-center font-Text-principale sm:text-2xl text-zinc-900 text-xl">
       Mes Projets
     </h2>
     <div
@@ -16,7 +16,7 @@ const listProjet = await pb.collection('Projets').getFullList()
       <div
         v-for="unProjet in listProjet"
         :key="unProjet.id"
-        class="lg:w-[600px] lg:h-[340px] w-72 h-52 relative overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-105 hover:shadow-xl"
+        class="lg:w-[600px] lg:h-[340px] w-72 h-44 relative overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-105 hover:shadow-xl"
       >
       <RouterLink :to="{ name: '/projet/[id]', params: { id: unProjet.id } }">
         <!-- Conteneur de l'image -->
