@@ -1,14 +1,14 @@
 <template>
   <div class="bg-[#e0d1df]">
     <!-- Section d'introduction -->
-    <div class="transition-div flex flex-col items-start justify-center px-5 pt-56 md:px-10">
+    <div class="transition-div mb-36 flex flex-col items-start justify-center px-5 pt-56 md:px-10">
       <h1
-        class="animate-light-effect mb-[-50px] font-Text-principale text-lg text-zinc-900 sm:text-xl lg:text-2xl"
+        class="animate-light-effect lg:mb-[-50px] font-Text-principale text-xl text-zinc-900 sm:text-xl lg:text-2xl"
       >
         Edouard Hashimoto
       </h1>
       <h1
-        class="animate-light-effect font-Text-principale text-lg text-zinc-900 sm:text-xl lg:text-2xl"
+        class="animate-light-effect font-Text-principale text-xl text-zinc-900 sm:text-xl lg:text-2xl"
       >
         DEVELOPPEUR WEB
       </h1>
@@ -57,34 +57,7 @@
     </div>
 
     <!-- Footer -->
-    <footer
-      class="relative flex flex-wrap justify-center bg-gradient-to-r from-[#503247] to-[#caaec8] p-10"
-    >
-      <div class="flex w-full max-w-6xl flex-wrap items-start justify-between gap-5">
-        <div class="text-center text-white">
-          <h3 class="font-league-gothic mb-3 text-lg font-bold">PROJETS</h3>
-          <ul class="font-mulish list-none space-y-2">
-            <li>Lazydocs</li>
-            <li>Expo Toyo Ito</li>
-            <li>Logo Judo</li>
-            <li>Affiche Ville</li>
-          </ul>
-        </div>
-        <div class="text-center text-white">
-          <h3 class="font-league-gothic mb-3 text-lg font-bold">CONTACT</h3>
-          <p class="font-mulish">edouard.hashimoto@edu.univ-fcomte.fr</p>
-          <p class="font-mulish">06 42 55 96 67</p>
-        </div>
-        <div class="text-center text-white">
-          <h3 class="font-league-gothic mb-3 text-lg font-bold">SOCIAL</h3>
-          <ul class="font-mulish list-none space-y-2">
-            <li><a href="#" class="hover:underline">LinkedIn</a></li>
-            <li><a href="#" class="hover:underline">Behance</a></li>
-            <li><a href="#" class="hover:underline">Instagram</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+    
   </div>
 </template>
 
@@ -141,7 +114,7 @@ onMounted(() => {
 }
 
 .animate-light-effect {
-  background: linear-gradient(to right, #000, #9e0505, #000);
+  background: linear-gradient(to right, #3f0425, #a10654, #3f0425);
   background-size: 200% auto;
   -webkit-background-clip: text;
   color: transparent;
