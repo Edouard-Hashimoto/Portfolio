@@ -93,5 +93,12 @@ const unProjet = await pb.collection('Projets').getOne(route.params.id)
         class="mx-auto w-[300px] self-start sm:mx-0 sm:w-1/4 lg:mt-[-400px]"
       />
     </div>
+    <div class="mt-5 pb-8 text-center">
+          <a :href="unProjet.lien"
+            class="animate-light-effect transform rounded bg-gradient-to-r from-[#503247] to-[#caaec8] px-8 py-4 font-Text-principale text-base text-white shadow-lg transition-transform hover:scale-105 hover:shadow-xl lg:text-xl"
+          >
+            Voir le projet
+       </a>
+      </div>
   </div>
 </template>
