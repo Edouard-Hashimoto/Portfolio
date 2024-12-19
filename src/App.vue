@@ -113,16 +113,16 @@ watch(isMenuOpen, (newValue) => {
       <div class="w-full text-center text-white md:w-auto">
         <h3 class="font-league-gothic mb-3 text-lg font-bold">SOCIAL</h3>
         <div class="flex justify-center gap-5">
-          <a href="https://github.com/" target="_blank" aria-label="GitHub">
+          <a href="https://github.com/Edouard-Hashimoto" target="_blank" aria-label="GitHub">
             <img src="/logo/github.png" alt="GitHub" class="h-8 w-8 hover:opacity-75" />
           </a>
-          <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/edouard-hashimoto-b9073929a/" target="_blank" aria-label="LinkedIn">
             <img src="/logo/linkedin.png" alt="LinkedIn" class="h-8 w-8 hover:opacity-75" />
           </a>
-          <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+          <a href="https://www.instagram.com/edouard._h/" target="_blank" aria-label="Instagram">
             <img src="/logo/insta.svg" alt="Instagram" class="h-8 w-8 hover:opacity-75" />
           </a>
-          <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+          <a href="https://x.com/YubiDesuwa" target="_blank" aria-label="Twitter">
             <img src="/logo/x.png" alt="Twitter" class="h-8 w-8 hover:opacity-75" />
           </a>
         </div>
