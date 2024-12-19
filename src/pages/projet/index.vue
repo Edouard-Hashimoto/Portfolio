@@ -16,7 +16,7 @@ const listProjet = await pb.collection('Projets').getFullList()
       <div
         v-for="unProjet in listProjet"
         :key="unProjet.id"
-        class="lg:w-[600px] lg:h-[340px] w-72 h-44 relative overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-105 hover:shadow-xl"
+        class="lg:w-[550px] lg:h-[300px] w-72 h-44 relative overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-105 hover:shadow-xl"
       >
       <RouterLink :to="{ name: '/projet/[id]', params: { id: unProjet.id } }">
         <!-- Conteneur de l'image -->

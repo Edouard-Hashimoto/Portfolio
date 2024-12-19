@@ -15,7 +15,7 @@ export default {
         base: '1.5625rem',
         lg: '2.1875rem',
         xl: '3.125rem',
-        '2xl': '12.5rem',
+        '2xl': '8.5rem',
         '3xl': '18.75rem'
       },
       fontFamily: {

@@ -50,8 +50,8 @@ watch(isMenuOpen, (newValue) => {
         <RouterLink to="/projet" class="font-Text-principale text-xl text-black"
           >Projets</RouterLink
         >
-        <RouterLink to="/contact" class="font-Text-principale text-xl text-black"
-          >Contact</RouterLink
+        <a href="mailto:ed1015japon@gmail.com" class="font-Text-principale text-xl text-black"
+          >Contact</a
         >
       </div>
     </nav>
@@ -85,9 +85,9 @@ watch(isMenuOpen, (newValue) => {
         >Projets</RouterLink
       >
       <hr class="w-3/4 border-t-2 border-purple-300" />
-      <RouterLink to="/contact" class="router-link block p-4 text-xl" @click="toggleMenu"
-        >Contact</RouterLink
-      >
+      <a href="mailto:example@example.com" class="router-link block p-4 text-xl" @click="toggleMenu">
+        Contact
+      </a>
     </div>
   </header>
 
