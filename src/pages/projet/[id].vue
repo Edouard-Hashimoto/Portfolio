@@ -29,13 +29,13 @@ const unProjet = await pb.collection('Projets').getOne(route.params.id)
         v-if="unProjet.Image2"
         :filename="unProjet?.Image2"
         :record="unProjet"
-        class="w-[300px] self-start mx-auto sm:mx-0 sm:w-1/4 lg:mt-[-150px]"
+        class="mx-auto w-[300px] self-start sm:mx-0 sm:w-1/4 lg:mt-[-150px]"
       />
       <ImgPb
         v-if="unProjet.Image3"
         :filename="unProjet?.Image3"
         :record="unProjet"
-        class="mx-auto w-[200px] self-start sm:mx-0 sm:w-[200px] lg:mr-96 lg:mt-[-200px]"
+        class="mx-auto w-[200px] self-start sm:mx-0 sm:w-[200px] lg:mr-96"
       />
     </div>
 
@@ -48,22 +48,26 @@ const unProjet = await pb.collection('Projets').getOne(route.params.id)
     <h1 class="mx-2 mt-10 font-Text-principale text-[40px] text-purple-700 lg:text-[100px]">
       {{ unProjet?.Titre4 }}
     </h1>
-    <div class="my-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-      <p class="mx-2 font-paragraph text-sm sm:w-1/2 lg:text-base">
-        {{ unProjet?.Para4 }}
-      </p>
+    <div class="flex flex-wrap items-center justify-center sm:flex-col lg:flex-row">
       <ImgPb
         v-if="unProjet.Image4"
         :filename="unProjet?.Image4"
         :record="unProjet"
-        class="lg:h-[450px] w-full sm:w-1/3"
+        class="w-full sm:mb-4 sm:w-1/3 lg:h-[450px] m-2"
       />
       <ImgPb
         v-if="unProjet.Image5"
         :filename="unProjet?.Image5"
         :record="unProjet"
-        class="lg:h-[450px] w-full sm:w-1/3"
+        class="w-full sm:mb-4 sm:w-1/3 lg:h-[450px] m-2"
       />
+    </div>
+
+    <div class="my-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <p class="mx-2 font-paragraph text-sm sm:w-1/2 lg:text-base">
+        {{ unProjet?.Para4 }}
+      </p>
+
       <ImgPb
         v-if="unProjet.Image6"
         :filename="unProjet?.Image6"
@@ -86,7 +90,7 @@ const unProjet = await pb.collection('Projets').getOne(route.params.id)
         v-if="unProjet.image9"
         :filename="unProjet?.image9"
         :record="unProjet"
-        class="w-[300px] self-start mx-auto sm:mx-0 sm:w-1/4 lg:mt-[-400px]"
+        class="mx-auto w-[300px] self-start sm:mx-0 sm:w-1/4 lg:mt-[-400px]"
       />
     </div>
   </div>

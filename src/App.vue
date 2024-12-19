@@ -23,7 +23,7 @@ watch(isMenuOpen, (newValue) => {
     <nav class="flex items-center justify-between">
       <!-- Logo -->
       <RouterLink to="/" class="mr-auto">
-        <img src="/Logo-noir.webp" class="h-14 lg:h-24" alt="Logo" />
+        <img src="/Logo-noir.webp" class="h-14 lg:h-20" alt="Logo" />
       </RouterLink>
 
       <!-- Bouton menu pour petits écrans -->
@@ -46,7 +46,7 @@ watch(isMenuOpen, (newValue) => {
 
       <!-- Menu principal pour écrans larges -->
       <div class="hidden space-x-12 md:flex">
-        <RouterLink to="/" class="font-Text-principale text-xl text-black">Accueil</RouterLink>
+        <RouterLink to="/about" class="font-Text-principale text-xl text-black">À propos</RouterLink>
         <RouterLink to="/projet" class="font-Text-principale text-xl text-black"
           >Projets</RouterLink
         >
@@ -77,8 +77,8 @@ watch(isMenuOpen, (newValue) => {
           ></path>
         </svg>
       </button>
-      <RouterLink to="/" class="router-link block p-4 text-xl" @click="toggleMenu"
-        >Accueil</RouterLink
+      <RouterLink to="/about" class="router-link block p-4 text-xl" @click="toggleMenu"
+        >À propos</RouterLink
       >
       <hr class="w-3/4 border-t-2 border-purple-300" />
       <RouterLink to="/projet" class="router-link block p-4 text-xl" @click="toggleMenu"
